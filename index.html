@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="简单网页系统 - 现代化的静态网页">
+    <meta name="keywords" content="网页, HTML5, CSS3, 响应式设计">
+    <meta name="author" content="简单网页系统">
+
+    <!-- 跨浏览器兼容性 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="theme-color" content="#1d4ed8">
+    <meta name="color-scheme" content="light dark">
+
+    <title>简单网页系统</title>
+
+    <!-- 预加载关键资源 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+
+    <!-- 预加载关键图片 -->
+    <link rel="preload" href="assets/images/hero-banner.jpg" as="image" type="image/jpeg">
+
+    <!-- 关键CSS内联 - 首屏渲染优化 -->
+    <style>
+        /* 关键路径CSS - 首屏渲染 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box
+        }
+
+        :root {
+            --primary-color: #1d4ed8;
+            --text-color: #0f172a;
+            --background-color: #ffffff;
+            --background-alt: #f8fafc;
+            --border-color: #e2e8f0;
+            --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            --spacing-sm: 1rem;
+            --spacing-md: 1.5rem;
+            --spacing-lg: 2rem
+        }
+
+        body {
+            font-family: var(--font-family);
+            color: var(--text-color);
+            background-color: var(--background-color);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-sm)
+        }
+
+        header {
+            background-color: var(--background-alt);
+            border-bottom: 1px solid var(--border-color);
+            padding: var(--spacing-md) 0;
+            position: sticky;
+            top: 0;
+            z-index: 100
+        }
+
+        h1 {
+            font-size: 2.25rem;
+            font-weight: 600;
+            margin-bottom: var(--spacing-md)
+        }
+
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 6px;
+            background: var(--primary-color);
+            color: var(--background-color);
+            padding: 8px;
+            text-decoration: none;
+            border-radius: 0.25rem;
+            z-index: 1000;
+            font-weight: 600
+        }
+
+        .skip-link:focus {
+            top: 6px
+        }
+    </style>
+
+    <!-- 完整样式表 - 非阻塞加载 -->
+    <link rel="preload" href="styles/main.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="styles/main.css">
+    </noscript>
+
+    <!-- 资源提示 -->
+    <link rel="prefetch" href="assets/images/team-work.jpg">
+    <link rel="prefetch" href="assets/images/contact-us.jpg">
+</head>
+
+<body>
+    <!-- 跳转链接 -->
+    <a href="#main-content" class="skip-link">跳转到主要内容</a>
+
+    <!-- 页面头部 -->
+    <header>
+        <div class="container">
+            <h1>简单网页系统</h1>
+            <nav aria-label="主导航菜单">
+                <ul>
+                    <li><a href="#home" aria-label="返回首页">首页</a></li>
+                    <li><a href="#about" aria-label="了解我们">关于</a></li>
+                    <li><a href="#services" aria-label="查看服务">服务</a></li>
+                    <li><a href="#contact" aria-label="联系我们">联系</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 主要内容区域 -->
+    <main id="main-content" aria-label="主要内容">
+        <div class="container">
+            <!-- 欢迎区域 -->
+            <section id="home" aria-labelledby="welcome-title">
+                <h2 id="welcome-title">欢迎来到简单网页系统</h2>
+                <p>我们致力于创建现代化、可访问且用户友好的网页体验。通过采用最新的Web标准和最佳实践，我们为您提供快速、响应式且符合可访问性标准的网站解决方案。</p>
+                <img src="assets/images/hero-banner.jpg" alt="现代化网页设计展示图，显示响应式布局在不同设备上的效果" class="hero-image"
+                    loading="lazy">
+            </section>
+
+            <!-- 关于区域 -->
+            <section id="about" aria-labelledby="about-title">
+                <h2 id="about-title">关于我们</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <h3>我们的使命</h3>
+                        <p>我们的使命是通过创新的Web技术和用户体验设计，为每个用户提供无障碍、高效且美观的数字体验。我们相信技术应该服务于人，让每个人都能平等地获取信息和服务。</p>
+
+                        <h3>技术专长</h3>
+                        <p>我们专注于现代Web开发技术，包括HTML5语义化标记、CSS3高级布局系统、响应式设计原则以及Web可访问性标准。我们的团队在前端开发、用户体验设计和性能优化方面拥有丰富经验。</p>
+
+                        <h3>设计理念</h3>
+                        <p>我们坚持"内容优先、用户至上"的设计理念，注重网站的可用性、可访问性和性能表现。每个项目都经过精心设计，确保在各种设备和浏览器上都能提供一致的优质体验。</p>
+                    </div>
+                    <img src="assets/images/team-work.jpg" alt="团队协作开发网页项目的工作场景" class="about-image" loading="lazy">
+                </div>
+            </section>
+
+            <!-- 服务区域 -->
+            <section id="services" aria-labelledby="services-title">
+                <h2 id="services-title">我们的服务</h2>
+                <ul class="services-grid">
+                    <li class="service-item" tabindex="0" aria-describedby="service-1-desc">
+                        <img src="assets/images/web-design-icon.svg" alt="" class="service-icon" loading="lazy"
+                            role="presentation">
+                        <h3 id="service-1-title">现代网页设计</h3>
+                        <p id="service-1-desc">我们提供符合现代设计趋势的网页设计服务，注重用户体验、品牌一致性和视觉层次。每个设计都经过用户测试和可访问性验证，确保为所有用户提供优质体验。
+                        </p>
+                    </li>
+
+                    <li class="service-item" tabindex="0" aria-describedby="service-2-desc">
+                        <img src="assets/images/responsive-icon.svg" alt="" class="service-icon" loading="lazy"
+                            role="presentation">
+                        <h3 id="service-2-title">响应式开发</h3>
+                        <p id="service-2-desc">采用移动优先的开发策略，确保网站在智能手机、平板电脑和桌面设备上都能完美显示。我们使用现代CSS技术和性能优化策略，保证快速加载和流畅交互。
+                        </p>
+                    </li>
+
+                    <li class="service-item" tabindex="0" aria-describedby="service-3-desc">
+                        <img src="assets/images/accessibility-icon.svg" alt="" class="service-icon" loading="lazy"
+                            role="presentation">
+                        <h3 id="service-3-title">可访问性优化</h3>
+                        <p id="service-3-desc">严格遵循WCAG 2.1 AA标准，为视觉、听觉、运动或认知障碍用户提供无障碍访问体验。包括屏幕阅读器支持、键盘导航优化和高对比度设计。</p>
+                    </li>
+
+                    <li class="service-item" tabindex="0" aria-describedby="service-4-desc">
+                        <img src="assets/images/performance-icon.svg" alt="" class="service-icon" loading="lazy"
+                            role="presentation">
+                        <h3 id="service-4-title">性能优化</h3>
+                        <p id="service-4-desc">通过代码优化、资源压缩、缓存策略和CDN部署等技术手段，显著提升网站加载速度和用户体验。我们的目标是实现3秒内的首屏加载时间。</p>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- 联系区域 -->
+            <section id="contact" aria-labelledby="contact-title">
+                <h2 id="contact-title">联系我们</h2>
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <h3>开始您的项目</h3>
+                        <p>准备好创建一个现代化、可访问且高性能的网站了吗？我们的专业团队随时为您提供咨询和技术支持。无论是全新项目还是现有网站优化，我们都能为您提供量身定制的解决方案。</p>
+
+                        <ul class="contact-methods">
+                            <li class="contact-method">
+                                <h4>电子邮件</h4>
+                                <p><a href="mailto:info@simple-webpage.com"
+                                        aria-label="发送邮件到 info@simple-webpage.com">info@simple-webpage.com</a></p>
+                            </li>
+
+                            <li class="contact-method">
+                                <h4>工作时间</h4>
+                                <p><time datetime="09:00">周一至周五 9:00</time> - <time datetime="18:00">18:00</time><br>
+                                    <time datetime="10:00">周六 10:00</time> - <time datetime="16:00">16:00</time>
+                                </p>
+                            </li>
+
+                            <li class="contact-method">
+                                <h4>响应时间</h4>
+                                <p>我们承诺在<strong>24小时</strong>内回复所有咨询，紧急项目可提供加急服务。</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <img src="assets/images/contact-us.jpg" alt="客户服务代表正在回复客户咨询" class="contact-image" loading="lazy">
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer aria-label="页脚信息">
+        <div class="container">
+            <p>&copy; <time datetime="2024">2024</time> 简单网页系统. 保留所有权利.</p>
+            <p>使用现代Web技术构建，遵循<abbr title="Web Content Accessibility Guidelines">WCAG</abbr>可访问性标准。</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript文件 - 异步加载 -->
+    <script src="scripts/main.js" defer></script>
+</body>
+
+</html>

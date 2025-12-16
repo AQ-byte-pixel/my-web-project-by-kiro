@@ -1,0 +1,42 @@
+{
+    "name": "simple-webpage",
+    "version": "1.0.0",
+    "description": "简单网页系统 - 现代化的静态网页",
+    "main": "index.html",
+    "scripts": {
+        "test": "jest",
+        "test:watch": "jest --watch",
+        "test:coverage": "jest --coverage",
+        "serve": "npx http-server . -p 8080",
+        "validate-html": "html-validate index.html"
+    },
+    "keywords": [
+        "html5",
+        "css3",
+        "responsive",
+        "static-website"
+    ],
+    "author": "简单网页系统",
+    "license": "MIT",
+    "devDependencies": {
+        "jest": "^29.7.0",
+        "jest-environment-jsdom": "^29.7.0",
+        "jsdom": "^23.0.1",
+        "fast-check": "^3.15.0",
+        "html-validate": "^8.7.4",
+        "@testing-library/jest-dom": "^6.1.5"
+    },
+    "jest": {
+        "testEnvironment": "jsdom",
+        "setupFilesAfterEnv": [
+            "<rootDir>/tests/setup.js"
+        ],
+        "testMatch": [
+            "<rootDir>/tests/**/*.test.js"
+        ],
+        "collectCoverageFrom": [
+            "scripts/**/*.js",
+            "!scripts/**/*.test.js"
+        ]
+    }
+}
